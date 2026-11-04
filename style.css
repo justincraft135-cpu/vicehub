@@ -1,5 +1,5 @@
 /* Layout: one narrow reading column, a gradient top bar, a key-art hero with a big countdown,
-   and purple-gradient section panels on a red-orange sunset ground with palms at the edges. */
+   and purple-gradient section panels on a coral-to-violet gradient ground. */
 :root {
   --night: #120f24;
   --panel: #1c1836;
@@ -57,7 +57,7 @@ img { max-width: 100%; height: auto; }
 .nav a[aria-current="page"] { color: #fff; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 
 /* Hero (homepage): full-bleed Lucia & Jason key art with the launch countdown,
-   a deepened sunset scrim and an FX layer (tech grid, sparkles, skyline, palm fronds). */
+   a deepened sunset scrim and an FX layer (tech grid, sparkles, skyline). */
 .hero {
   position: relative; overflow: hidden; isolation: isolate;
   border-bottom: 3px solid rgba(255, 233, 214, .85);
@@ -90,21 +90,6 @@ img { max-width: 100%; height: auto; }
   radial-gradient(circle at 37% 34%, rgba(255, 255, 255, .75) 1.2px, transparent 2.6px);
 }
 .hero-skyline { position: absolute; left: 0; bottom: 0; width: min(640px, 60%); height: 104px; opacity: .5; }
-/* Corner palm silhouettes: the alpha-keyed sprite is blackened and the corner box is
-   radially masked, so fronds bleed off the hero's top/side edges with no visible
-   sprite bounding box or hard seam on the inner edges. */
-.hp-corner { position: absolute; top: 0; overflow: hidden; }
-.hp-corner img { position: absolute; max-width: none; filter: brightness(0); opacity: .48; }
-.hp-tl { left: 0; width: 320px; height: 220px;
-  -webkit-mask-image: radial-gradient(115% 115% at 0% 0%, #000 50%, transparent 76%);
-  mask-image: radial-gradient(115% 115% at 0% 0%, #000 50%, transparent 76%);
-}
-.hp-tl img { top: -10px; left: -100px; width: 340px; transform: scaleX(-1); }
-.hp-tr { right: 0; width: 270px; height: 190px;
-  -webkit-mask-image: radial-gradient(115% 115% at 100% 0%, #000 50%, transparent 76%);
-  mask-image: radial-gradient(115% 115% at 100% 0%, #000 50%, transparent 76%);
-}
-.hp-tr img { top: -10px; right: -115px; width: 310px; }
 .hero .wrap { position: relative; z-index: 2; padding-block: 56px 64px; }
 @media (min-width: 760px) { .hero .wrap { padding-block: 84px 70px; } }
 .eyebrow { display: flex; align-items: center; gap: 16px; max-width: 540px; margin: 0 0 4px; font-style: normal; font-size: 14.5px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: #ffd9ec; white-space: nowrap; text-shadow: 0 1px 10px rgba(43, 6, 54, .5); }
@@ -148,33 +133,18 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 5vw, 
   .hero-art { object-position: 72% 14%; }
   .hero .wrap { padding-block: 44px 52px; }
   .hero-skyline { width: 78%; height: 76px; opacity: .42; }
-  .hp-tl { width: 200px; height: 140px; }
-  .hp-tl img { width: 230px; left: -68px; }
-  .hp-tr { width: 170px; height: 118px; }
-  .hp-tr img { width: 210px; right: -78px; }
   .eyebrow { font-size: 12px; letter-spacing: .24em; gap: 11px; }
   .eyebrow::before, .eyebrow::after { width: 30px; }
   .countdown li { min-width: 78px; padding: 13px 10px 10px; }
   .countdown b { font-size: 36px; }
 }
 
-/* Content ground: same coral-to-violet gradient as the top nav, with lavender palms growing out of both edges. */
+/* Content ground: same coral-to-violet gradient as the top nav. */
 main.shell {
   display: grid; grid-template-columns: minmax(0, 1fr); padding-block: 32px 48px;
-  background-image:
-    url("assets/palm-tree-lean.svg"),
-    url("assets/palm-tree-lean.svg"),
-    url("assets/palm-tree-lean.svg"),
-    url("assets/palm-tree-lean-r.svg"),
-    url("assets/palm-tree-lean-r.svg"),
-    url("assets/palm-tree-lean-r.svg"),
-    var(--nav-grad);
+  background-image: var(--nav-grad);
   background-repeat: no-repeat;
-  background-size: 420px auto, 360px auto, 400px auto, 420px auto, 360px auto, 400px auto, 100% 100%;
-  background-position:
-    left -105px top 3%, left -115px top 34%, left -100px top 66%,
-    right -105px top 15%, right -115px top 50%, right -100px top 84%,
-    left top;
+  background-size: 100% 100%;
 }
 main.shell > .wrap { width: 100%; }
 main h2 { font-family: var(--display); font-weight: 400; font-size: 25px; letter-spacing: .02em; color: #fff; margin: 40px 0 12px; }
@@ -182,16 +152,6 @@ main h2:first-child { margin-top: 0; }
 main h3 { font-size: 19px; margin: 24px 0 6px; color: var(--cream); }
 p, li { max-width: 65ch; }
 .updated { color: var(--muted); font-size: 14px; }
-@media (max-width: 700px) {
-  main.shell {
-    background-size: 210px auto, 180px auto, 200px auto, 210px auto, 180px auto, 200px auto, 100% 100%;
-    background-position:
-      left -57px top 3%, left -49px top 34%, left -54px top 66%,
-      right -57px top 15%, right -49px top 50%, right -54px top 84%,
-      left top;
-  }
-}
-
 /* "Updated" pill (homepage) */
 .updated-pill {
   background: var(--panel-grad); border: 2px solid var(--cream); border-radius: 999px;
