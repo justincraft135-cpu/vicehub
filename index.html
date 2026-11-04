@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=19">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5385328860791776" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -78,10 +78,12 @@
 (function () {
   var target = new Date(2026, 10, 19, 0, 0, 0); // Nov 19, 2026, midnight in the visitor's time zone
   var ids = ["d", "h", "m", "s"];
+  var lastS = -1;
   function tick() {
     var left = Math.max(0, target - new Date());
     var v = [Math.floor(left / 864e5), Math.floor(left / 36e5) % 24, Math.floor(left / 6e4) % 60, Math.floor(left / 1e3) % 60];
     ids.forEach(function (id, i) { var el = document.getElementById("cd-" + id); if (el) el.textContent = String(v[i]).padStart(2, "0"); });
+    if (v[3] !== lastS) { lastS = v[3]; var sEl = document.getElementById("cd-s"); if (sEl && sEl.parentNode && sEl.parentNode.classList) { var sLi = sEl.parentNode; sLi.classList.remove("cd-tick"); void sLi.offsetWidth; sLi.classList.add("cd-tick"); } }
     if (left === 0) { var t = document.getElementById("cd-note"); if (t) t.textContent = "GTA 6 is out now."; }
   }
   tick(); setInterval(tick, 1000);

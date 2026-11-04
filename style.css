@@ -111,32 +111,37 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 5vw, 
 .hero p.lede { font-size: clamp(16.5px, 2.3vw, 19.5px); font-style: normal; font-weight: 500; line-height: 1.55; max-width: 580px; margin: 16px 0 30px; color: rgba(255, 242, 250, .94); text-shadow: 0 1px 12px rgba(43, 6, 54, .55); }
 .art-credit { position: absolute; right: 14px; bottom: 10px; margin: 0; font-size: 12px; color: rgba(255, 255, 255, .78); text-shadow: 0 1px 6px rgba(26, 8, 44, .8); }
 
-.countdown { display: flex; flex-wrap: wrap; gap: 14px; margin: 6px 0 0; padding: 0; list-style: none; }
-.countdown li {
-  --tile-bg: linear-gradient(160deg, rgba(151, 71, 255, .56), rgba(109, 40, 217, .50));
-  --tile-glow: rgba(151, 71, 255, .52);
-  min-width: 108px; padding: 18px 16px 13px; text-align: center;
-  border: 2px solid var(--cream); border-radius: 20px;
-  background:
-    linear-gradient(165deg, rgba(255, 255, 255, .34) 0%, rgba(255, 255, 255, .07) 42%, rgba(255, 255, 255, 0) 72%),
-    var(--tile-bg);
-  backdrop-filter: blur(7px) saturate(1.35); -webkit-backdrop-filter: blur(7px) saturate(1.35);
-  box-shadow: 0 0 24px var(--tile-glow), 0 16px 34px rgba(24, 3, 52, .35), inset 0 1px 0 rgba(255, 255, 255, .55), inset 0 -10px 22px rgba(255, 255, 255, .06);
+.countdown { display: flex; flex-wrap: nowrap; gap: 0; margin: 6px 0 0; padding: 0; list-style: none; max-width: 620px;
+  background: linear-gradient(180deg, rgba(38, 18, 74, .72), rgba(22, 9, 46, .80));
+  border: 1px solid rgba(255, 233, 214, .55); border-radius: 16px; overflow: hidden;
+  backdrop-filter: blur(7px) saturate(1.2); -webkit-backdrop-filter: blur(7px) saturate(1.2);
+  box-shadow: 0 14px 30px rgba(24, 3, 52, .35), inset 0 1px 0 rgba(255, 255, 255, .14); }
+.countdown li { flex: 1 1 0; min-width: 0; padding: 16px 8px 12px; text-align: center; }
+.countdown li + li { border-left: 1px solid rgba(255, 233, 214, .18); }
+.countdown b { display: block; font-family: var(--display); font-weight: 400; font-size: clamp(44px, 7vw, 58px); line-height: 1.05; color: #ffb347; font-variant-numeric: tabular-nums; text-shadow: 0 0 12px rgba(255, 150, 50, .45), 0 2px 10px rgba(20, 2, 50, .35); }
+.countdown small { text-transform: uppercase; letter-spacing: .2em; font-size: 11px; font-weight: 700; color: #ffcf8f; }
+.countdown li:nth-child(4) { background: linear-gradient(180deg, rgba(255, 145, 45, .16), rgba(255, 120, 40, .07)); }
+.countdown li:nth-child(4) b { font-size: clamp(50px, 7.6vw, 66px); text-shadow: 0 0 18px rgba(255, 150, 50, .75), 0 0 42px rgba(255, 120, 40, .40), 0 2px 10px rgba(20, 2, 50, .35); }
+.countdown li:nth-child(4) small::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #ffb347; margin-right: 6px; vertical-align: 2px; box-shadow: 0 0 8px rgba(255, 150, 50, .85); }
+.countdown li.cd-tick { animation: cd-flash .45s ease-out; }
+.countdown li.cd-tick b { animation: cd-pop .45s ease-out; }
+.countdown li.cd-tick small::before { animation: cd-dot .45s ease-out; }
+@keyframes cd-pop { 0% { transform: scale(1.13); } 100% { transform: scale(1); } }
+@keyframes cd-flash { 0% { filter: brightness(1.35); } 100% { filter: brightness(1); } }
+@keyframes cd-dot { 0% { transform: scale(1.8); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .countdown li.cd-tick, .countdown li.cd-tick b, .countdown li.cd-tick small::before { animation: none; }
 }
-.countdown li:nth-child(1) { --tile-bg: linear-gradient(160deg, rgba(59, 110, 246, .60), rgba(30, 64, 200, .54)); --tile-glow: rgba(59, 110, 246, .55); }
-.countdown li:nth-child(2) { --tile-bg: linear-gradient(160deg, rgba(255, 145, 45, .55), rgba(235, 95, 25, .45)); --tile-glow: rgba(255, 145, 45, .52); }
-.countdown li:nth-child(3) { --tile-bg: linear-gradient(160deg, rgba(151, 71, 255, .56), rgba(109, 40, 217, .50)); --tile-glow: rgba(151, 71, 255, .52); }
-.countdown li:nth-child(4) { --tile-bg: linear-gradient(160deg, rgba(255, 77, 141, .58), rgba(244, 44, 110, .50)); --tile-glow: rgba(255, 77, 141, .55); }
-.countdown b { display: block; font-family: var(--display); font-weight: 400; font-size: clamp(44px, 7vw, 58px); line-height: 1.05; color: #fff; font-variant-numeric: tabular-nums; text-shadow: 0 2px 14px rgba(20, 2, 50, .35); }
-.countdown small { text-transform: uppercase; letter-spacing: .2em; font-size: 11px; font-weight: 700; color: rgba(255, 255, 255, .88); }
 @media (max-width: 600px) {
   .hero-art { object-position: 72% 14%; }
   .hero .wrap { padding-block: 44px 52px; }
   .hero-skyline { width: 78%; height: 76px; opacity: .42; }
   .eyebrow { font-size: 12px; letter-spacing: .24em; gap: 11px; }
   .eyebrow::before, .eyebrow::after { width: 30px; }
-  .countdown li { min-width: 78px; padding: 13px 10px 10px; }
-  .countdown b { font-size: 36px; }
+  .countdown li { padding: 12px 4px 9px; }
+  .countdown b { font-size: 34px; }
+  .countdown li:nth-child(4) b { font-size: 38px; }
+  .countdown small { letter-spacing: .14em; font-size: 10px; }
 }
 
 /* Content ground: same deep violet-to-sunset-orange gradient as the top nav,
