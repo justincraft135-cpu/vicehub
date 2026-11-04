@@ -103,7 +103,7 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 5vw, 
   .countdown b { font-size: 32px; }
 }
 
-/* Content ground: red-to-orange sunset with lavender palms growing out of both edges. */
+/* Content ground: same coral-to-violet gradient as the top nav, with lavender palms growing out of both edges. */
 main.shell {
   display: grid; grid-template-columns: minmax(0, 1fr); padding-block: 32px 48px;
   background-image:
@@ -113,7 +113,7 @@ main.shell {
     url("assets/palm-tree-lean-r.svg"),
     url("assets/palm-tree-lean-r.svg"),
     url("assets/palm-tree-lean-r.svg"),
-    linear-gradient(135deg, #dd2318 0%, #f2571a 55%, #ff8f22 100%);
+    var(--nav-grad);
   background-repeat: no-repeat;
   background-size: 420px auto, 360px auto, 400px auto, 420px auto, 360px auto, 400px auto, 100% 100%;
   background-position:
