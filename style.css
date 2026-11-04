@@ -124,7 +124,7 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 5vw, 
   box-shadow: 0 0 24px var(--tile-glow), 0 16px 34px rgba(24, 3, 52, .35), inset 0 1px 0 rgba(255, 255, 255, .55), inset 0 -10px 22px rgba(255, 255, 255, .06);
 }
 .countdown li:nth-child(1) { --tile-bg: linear-gradient(160deg, rgba(59, 110, 246, .60), rgba(30, 64, 200, .54)); --tile-glow: rgba(59, 110, 246, .55); }
-.countdown li:nth-child(2) { --tile-bg: linear-gradient(160deg, rgba(236, 72, 180, .56), rgba(192, 38, 140, .50)); --tile-glow: rgba(236, 72, 180, .52); }
+.countdown li:nth-child(2) { --tile-bg: linear-gradient(160deg, rgba(255, 145, 45, .55), rgba(235, 95, 25, .45)); --tile-glow: rgba(255, 145, 45, .52); }
 .countdown li:nth-child(3) { --tile-bg: linear-gradient(160deg, rgba(151, 71, 255, .56), rgba(109, 40, 217, .50)); --tile-glow: rgba(151, 71, 255, .52); }
 .countdown li:nth-child(4) { --tile-bg: linear-gradient(160deg, rgba(255, 77, 141, .58), rgba(244, 44, 110, .50)); --tile-glow: rgba(255, 77, 141, .55); }
 .countdown b { display: block; font-family: var(--display); font-weight: 400; font-size: clamp(44px, 7vw, 58px); line-height: 1.05; color: #fff; font-variant-numeric: tabular-nums; text-shadow: 0 2px 14px rgba(20, 2, 50, .35); }
