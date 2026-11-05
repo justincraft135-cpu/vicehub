@@ -108,8 +108,8 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 5vw, 
   -webkit-text-fill-color: transparent; color: transparent;
   filter: drop-shadow(0 0 16px rgba(255, 150, 50, .6)) drop-shadow(0 0 46px rgba(255, 120, 40, .38)) drop-shadow(3px 4px 0 rgba(43, 6, 54, .35));
 }
-.hero h1 .h1-sub { display: block; font-family: var(--body); font-weight: 700; font-style: normal; font-size: clamp(29px, 4.9vw, 46px); line-height: 1.12; letter-spacing: -.01em; margin-top: 18px; color: #fff; text-shadow: 0 2px 18px rgba(43, 6, 54, .55), 0 1px 4px rgba(43, 6, 54, .45); }
-.hero p.lede { font-size: clamp(16.5px, 2.3vw, 19.5px); font-style: normal; font-weight: 500; line-height: 1.55; max-width: 580px; margin: 16px 0 30px; color: rgba(255, 242, 250, .94); text-shadow: 0 1px 12px rgba(43, 6, 54, .55); }
+.hero h1 .h1-sub { display: block; font-family: var(--body); font-weight: 700; font-style: normal; font-size: clamp(29px, 4.9vw, 46px); line-height: 1.12; letter-spacing: -.01em; margin-top: 18px; color: #ffe3c2; text-shadow: 0 2px 18px rgba(43, 6, 54, .55), 0 1px 4px rgba(43, 6, 54, .45); }
+.hero p.lede { font-size: clamp(16.5px, 2.3vw, 19.5px); font-style: normal; font-weight: 500; line-height: 1.55; max-width: 580px; margin: 16px 0 30px; color: rgba(255, 231, 203, .95); text-shadow: 0 1px 12px rgba(43, 6, 54, .55); }
 .art-credit { position: absolute; right: 14px; bottom: 10px; margin: 0; font-size: 12px; color: rgba(255, 255, 255, .78); text-shadow: 0 1px 6px rgba(26, 8, 44, .8); }
 
 .countdown { display: flex; flex-wrap: nowrap; gap: 0; margin: 6px 0 0; padding: 0; list-style: none; max-width: 620px;
