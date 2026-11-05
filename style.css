@@ -56,8 +56,8 @@ img { max-width: 100%; height: auto; }
   .top .logo { justify-self: start; }
   .top .nav { justify-self: center; }
 }
-.logo { font-family: var(--display); font-size: 11px; color: #fff; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; }
-.logo-img { width: 15px; height: 15px; border-radius: 50%; display: block; margin-right: 5px; }
+.logo { font-family: var(--display); font-size: 16px; color: #fff; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; }
+.logo-img { width: 22px; height: 22px; border-radius: 50%; display: block; margin-right: 7px; }
 .logo span { color: #fff; }
 .nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 13.5px; }
 .nav a { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; padding: 3px 2px; }
