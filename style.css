@@ -65,10 +65,11 @@ img { max-width: 100%; height: auto; }
   background: linear-gradient(180deg, #1c0440 0%, #4b1160 34%, #c65a44 62%, #e2603f 100%);
 }
 .hero-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 80% 16%; filter: saturate(1.14) contrast(1.04); animation: heroZoom 16s ease-in-out infinite alternate; will-change: transform, opacity; }
-.hero-art-b { object-position: 50% 30%; animation: heroZoom 16s ease-in-out infinite alternate, heroSwap 20s linear infinite; }
+.hero-art-b { object-position: 50% 30%; opacity: 0; animation: heroZoom 16s ease-in-out infinite alternate, heroCycle 30s linear infinite; animation-delay: 0s, 10s; animation-fill-mode: none, backwards; }
+.hero-art-c { object-position: 50% 30%; opacity: 0; animation: heroZoom 16s ease-in-out infinite alternate, heroCycle 30s linear infinite; animation-delay: 0s, 20s; animation-fill-mode: none, backwards; }
 @keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.12); } }
-@keyframes heroSwap { 0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .hero-art { animation: none; } .hero-art-b { display: none; } }
+@keyframes heroCycle { 0% { opacity: 0; } 6% { opacity: 1; } 33% { opacity: 1; } 39%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .hero-art { animation: none; } .hero-art-b, .hero-art-c { display: none; } }
 .hero-scrim { position: absolute; inset: 0; background:
   linear-gradient(180deg, rgba(22, 3, 58, .62) 0%, rgba(46, 8, 88, .26) 30%, rgba(255, 140, 50, .06) 55%, rgba(255, 110, 40, .14) 100%),
   linear-gradient(90deg, rgba(26, 4, 58, .50) 0%, rgba(26, 4, 58, .18) 44%, rgba(26, 4, 58, 0) 68%),
