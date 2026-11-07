@@ -377,3 +377,7 @@ button.btn { border: 0; cursor: pointer; font: inherit; font-weight: 700; justif
 .location-shot { margin: 12px 0 16px; }
 .location-shot img { display: block; width: 100%; border-radius: 10px; }
 .location-shot figcaption { color: #e6dcf7; font-size: 14px; margin-top: 6px; }
+
+/* Today in Leonida 100% checklist (checklist.js): rows that cannot be ticked yet
+   (the story placeholder) read muted until their real lists land at launch. */
+.tlist input:disabled + label { color: var(--muted); }
