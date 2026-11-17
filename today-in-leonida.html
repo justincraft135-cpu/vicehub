@@ -23,18 +23,18 @@
 <main class="shell"><div class="wrap">
 <section class="box">
 <h1>Today in Leonida</h1>
-<p class="updated">Updated November 2, 2026</p>
+<p class="updated">Updated November 14, 2026</p>
 <p>One page, checked every morning: what GTA 6 players need <em>today</em>. Right now that means launch-season checks. After launch, this page becomes the daily check-in — collectibles, completion progress and, when GTA 6 Online arrives, its daily and weekly rotations.</p>
-<p><strong>Today: <span id="today-date">November 2, 2026</span></strong> &middot; <strong><span id="days-to-launch">17</span> days to launch</strong> &middot; <strong><span id="days-to-preload">10</span> days to preload</strong></p>
+<p><strong>Today: <span id="today-date">November 14, 2026</span></strong> &middot; <strong><span id="days-to-launch">5</span> days to launch</strong> &middot; <strong>preloads live now</strong></p>
 </section>
 
 <section class="box">
 <h2>Today's checks</h2>
 <dl class="facts">
 <dt>Launch day</dt><dd>Thursday, November 19, 2026, on PlayStation 5 and Xbox Series X|S. <span class="tag tag-official">Official</span></dd>
-<dt>Preload opens</dt><dd>November 12, 2026, for digital copies. <span class="tag tag-official">Official</span></dd>
+<dt>Preload</dt><dd>Live now on PS5 and Xbox Series X|S for digital copies. <span class="tag tag-official">Official</span></dd>
 <dt>Unlock time</dt><dd>Not announced by Rockstar yet. Do not plan your evening around an assumed hour — this page will carry the official times when they are confirmed. <a href="release-date.html">Release date &amp; unlock times</a></dd>
-<dt>File size</dt><dd>Not officially announced. Estimates put it around 150–200 GB; clear about 250 GB to be safe. A reported PlayStation Store-backend figure of about 210 GB is circulating, but it is not official. <a href="gta-6-file-size.html">File size guide</a></dd>
+<dt>File size</dt><dd>Up to 212 GB. <span class="tag tag-official">Official</span> Clear about 250 GB to be safe. <a href="gta-6-file-size.html">File size guide</a></dd>
 <dt>Price</dt><dd>$79.99 Standard / $99.99 Ultimate, reported US prices. Buying before November 20 is reported to include the free Vintage Vice City Pack. <span class="tag tag-reported">Reported</span> <a href="preorder.html">Preorder comparison</a></dd>
 </dl>
 </section>
@@ -142,7 +142,6 @@
 <script>
 (function () {
   var launch = new Date(2026, 10, 19);
-  var preload = new Date(2026, 10, 12);
   var now = new Date();
   var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   function daysTo(d) { return Math.max(0, Math.round((d - today) / 864e5)); }
@@ -150,8 +149,6 @@
   if (dEl) dEl.textContent = today.toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" });
   var lEl = document.getElementById("days-to-launch");
   if (lEl) lEl.textContent = daysTo(launch);
-  var pEl = document.getElementById("days-to-preload");
-  if (pEl) pEl.textContent = daysTo(preload);
 })();
 </script>
 </body>
