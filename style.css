@@ -20,6 +20,10 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
+  /* Reserve the safe-area inset as real space at the top of the page: the
+     sticky top bar is offset down by the same inset, so without this the bar
+     overlaps (and hides) the first strip of content under it. */
+  padding-top: env(safe-area-inset-top, 0px);
   background: #1c1038;
   color: var(--text);
   font: 17px/1.65 var(--body);
