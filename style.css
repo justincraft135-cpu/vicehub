@@ -46,16 +46,24 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 6px 24px rgba(43, 7, 51, .35);
 }
 .top .wrap {
-  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
-  gap: 8px 20px; padding-block: 12px; max-width: none;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 4px 20px; padding-block: 7px; max-width: none;
 }
-.top .logo { justify-self: start; }
-.top .nav { justify-self: center; }
-@media (max-width: 700px) {
-  .top .wrap { grid-template-columns: 1fr; }
-  .top .logo { justify-self: start; }
-  .top .nav { justify-self: center; }
+/* Hamburger button (three lines) at the top right of the bar. */
+.nav-toggle {
+  display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+  width: 44px; height: 36px; padding: 8px 10px; margin-left: auto;
+  background: transparent; border: 1px solid rgba(255, 233, 214, .65); border-radius: 9px;
+  cursor: pointer;
 }
+.nav-toggle span { display: block; height: 2px; border-radius: 2px; background: #fff; }
+/* The nav links live in a panel under the bar, opened from the hamburger button. */
+.top .nav {
+  display: none; flex-basis: 100%; flex-direction: column; flex-wrap: nowrap;
+  gap: 0; padding: 6px 0 2px;
+}
+.top.menu-open .nav { display: flex; }
+.top .nav a { padding: 9px 4px; border-top: 1px solid rgba(255, 233, 214, .18); }
 .logo { font-family: var(--display); font-size: 16px; color: #fff; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; }
 .logo-img { width: 22px; height: 22px; border-radius: 50%; display: block; margin-right: 7px; }
 .logo span { color: #fff; }

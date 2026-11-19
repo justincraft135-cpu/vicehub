@@ -22,3 +22,28 @@
   addEventListener("resize", queue);
   update();
 })();
+
+/* Header menu: the hamburger button in the top bar opens and closes the nav
+   panel under the bar; tapping a link closes it again. */
+(function () {
+  function wire() {
+    var top = document.querySelector(".top");
+    var btn = document.querySelector(".nav-toggle");
+    if (!top || !btn) return;
+    btn.addEventListener("click", function () {
+      var open = top.classList.toggle("menu-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    var nav = top.querySelector(".nav");
+    if (nav) nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) {
+        top.classList.remove("menu-open");
+        btn.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-label", "Open menu");
+      }
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", wire);
+  else wire();
+})();
